@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define M 4
 
-int find_sum(int mas[4], int column){
+int find_sum(int mas[M], int column){
     int sum = 0;
 
     for (int i = 0; i < column; i++)
@@ -10,7 +11,7 @@ int find_sum(int mas[4], int column){
     return (sum);
 }
 int main(int ac, char **av){
-    int mas[4][4] = {
+    int mas[M][M] = {
         {1, 4, 7, 0},
         {13, 12, 0, 0},
         {9, 46, 7, 8},
@@ -18,7 +19,8 @@ int main(int ac, char **av){
     };
 
     int line = atoi(av[1]);
-
-    printf("%d\n", find_sum(mas[line], 4));
+    int res = 0;
+    res = find_sum(mas[line], 4);
+    printf("%d\n", res);
     return (0);
 }
